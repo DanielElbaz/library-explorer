@@ -8,7 +8,7 @@ interface BooksListProps {
 
 export function BooksList({ books, favoriteIds, onToggleFavorite }: BooksListProps) {
   return (
-    <ol style={{ padding: 0, margin: 10 }}>
+    <ul style={{ padding: 0, margin: 10 }}>
       {books.map((book: Book) => {
         const isFavorite = favoriteIds.includes(book.id);
 
@@ -29,12 +29,13 @@ export function BooksList({ books, favoriteIds, onToggleFavorite }: BooksListPro
                 <b>Author: </b>
                 {book.author} — {book.year}
               </div>
-              <div style={{ marginTop: 6, color: "#333", fontSize: "0.85rem" }}>
-                {book.rating} / 5 • {book.tags.join(", ")}
+              <div style={{ marginTop: 6, color: "#333", fontSize: "0.8rem" }}>
+                {book.rating} / 5 <strong>-</strong> Tags: {[book.tags.join(", ")]}
               </div>
+              <div style={{fontSize:'0.8rem',paddingTop:'2px'}}><strong>Description :</strong> {book.description}</div>
             </div>
 
-            {/* ⭐ Favorite toggle button */}
+            
             <button
               onClick={() => onToggleFavorite(book.id)}
               style={{
@@ -44,13 +45,13 @@ export function BooksList({ books, favoriteIds, onToggleFavorite }: BooksListPro
                 fontSize: "1.5rem",
                 marginLeft: "10px"
               }}
-              aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+              
             >
               {isFavorite ? "⭐" : "☆"}
             </button>
           </li>
         );
       })}
-    </ol>
+    </ul>
   );
 }
