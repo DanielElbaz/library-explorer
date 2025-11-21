@@ -8,7 +8,7 @@ interface TagFilterProps {
 
 export function TagFilter({ selectedTag, onChange, tags }: TagFilterProps) {
     return (
-        <select style={{padding:"8px", borderRadius:"8px"}}value={selectedTag} onChange={(e) => {
+        <select style={{padding:"8px", borderRadius:"8px", cursor:"pointer"}}value={selectedTag} onChange={(e) => {
             onChange(e.target.value === 'all' ? 'all' : (e.target.value as Tag))
         }}>
             <option value='all'> All tags</option>

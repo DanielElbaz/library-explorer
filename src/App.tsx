@@ -130,6 +130,8 @@ function App() {
     setSelectedTag("all");
     setMinRating(0);
     setSortOption('none');
+    setShowFavoritesOnly(false);
+    setFavoriteIds([]); 
   }
 
 

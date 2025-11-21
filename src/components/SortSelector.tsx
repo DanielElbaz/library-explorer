@@ -16,7 +16,7 @@ interface SortSelectorProps {
 export function SortSelector({ value, onChange }: SortSelectorProps) {
   return (
     <select
-    style={{padding:"6px",borderRadius:"8px"}}
+    style={{padding:"6px",borderRadius:"8px", cursor:"pointer"}}
       value={value}
       onChange={(e) => onChange(e.target.value as SortOption)}
     >
